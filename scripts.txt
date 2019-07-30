@@ -1,0 +1,35 @@
+- Create a database
+- Create an insert user script
+
+use('new-db')
+db.users.insertOne({ name: 'Alan', gender: 'm' })
+
+
+- Create update user's name script for given _id
+
+db.users.update({ _id: ... }, { $set: { name: 'new name' } })
+
+
+- Create get all users script (retrieving only username) and sorted by username
+
+db.users.find({}, {name: 1, _id: 0}).sort({ name: 1 })
+
+
+- Create a script that returns only female users
+
+db.users.find({ gender: 'f' })
+
+
+- Create a script to update all tasks completed = false
+
+db.tasks.updateMany({ completed: true }, { $set: { completed: false } })
+
+
+- Create a script to delete all completed=true tasks
+
+db.tasks.deleteMany({ completed: true })
+
+
+- Create a script to get all tasks of user sorted by created date that are not completed.
+
+db.tasks.find({ owner: ... , completed: false }).sort({ created:1 })
