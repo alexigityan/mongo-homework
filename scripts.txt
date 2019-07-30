@@ -1,7 +1,7 @@
 - Create a database
 - Create an insert user script
 
-use('new-db')
+use new-db-name
 db.users.insertOne({ name: 'Alan', gender: 'm' })
 
 
